@@ -1,0 +1,74 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>de.vogella.algorithms.sort.quicksort</groupId>
+  <artifactId>quicksort</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  	<name>quicksort</name>
+  	<url>http://maven.apache.org</url>
+
+	
+	<build>
+    	<sourceDirectory>src</sourceDirectory>
+    	<testSourceDirectory>test</testSourceDirectory>
+    	
+    	 <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                    <release>11</release>
+                </configuration>
+            </plugin>
+            <plugin>
+                    <groupId>de.oscillation.maven</groupId>
+                    <artifactId>doxygen-maven-plugin</artifactId>
+                    <version>0.1.0</version>
+                    <configuration>
+                        <workingDirectory>${basedir}</workingDirectory>
+                        <executable>doxygen</executable>
+                        <doxyfile>Doxyfile</doxyfile>
+                        <autogen>false</autogen>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>clean</id>
+                            <phase>clean</phase>
+                            <goals>
+                                <goal>clean</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>generate</id>
+                            <phase>prepare-package</phase>
+                            <goals>
+                                <goal>generate</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+         </plugins>
+    	 
+    </build>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	<sonar.projectKey>jenkins_trabajo</sonar.projectKey>
+	<sonar.organization>alu0100956153</sonar.organization>
+	<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+	<sonar.login>88c9451f8307c2a1805281a727f78ec9440a8c6e</sonar.login>
+  </properties>
+
+  <dependencies>
+  	<dependency>
+  		<groupId>junit</groupId>
+  		<artifactId>junit</artifactId>
+  		<version>4.12</version>
+  	</dependency>
+  </dependencies>
+</project>
